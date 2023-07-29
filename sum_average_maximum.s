@@ -17,13 +17,13 @@ main:   addi $s0, $zero, 0      # $s0 = sum = 0
         addi $s4, $zero, 0      # $s4 = base address of arry[] = 0
 
 loop:   li	$v0, 4		# system call for print_str
-		la	$a0, STR_1	# address of string to print
-		syscall			# print the string
+	la	$a0, STR_1	# address of string to print
+	syscall			# print the string
 
-		li	$v0, 5		# system call for read_int
-		syscall			# read the integer
+	li	$v0, 5		# system call for read_int
+	syscall			# read the integer
 
-		beq	$v0, $zero, exit    # Check if in_num($v0) == 0, if true goto exit
+	beq	$v0, $zero, exit    # Check if in_num($v0) == 0, if true goto exit
 
         addi $s1, $s1, 1;       # count = count + 1
 
